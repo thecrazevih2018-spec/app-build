@@ -1,0 +1,8 @@
+{
+  "name": "SnapSolve AI",
+  "description": "Advanced homework assistant for high school and college students with OCR capabilities for solving problems from photos.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

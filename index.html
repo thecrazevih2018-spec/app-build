@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SnapSolve AI - Your Homework Assistant</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    body { font-family: 'Inter', sans-serif; transition: background-color 0.3s ease; }
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .dark .glass-effect {
+      background: rgba(15, 23, 42, 0.8);
+      border-color: rgba(51, 65, 85, 0.5);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in { animation: fadeIn 0.3s ease-out forwards; }
+    
+    /* Styles for PDF capture to ensure visibility for html2canvas while hidden from viewport */
+    #pdf-capture-zone {
+      position: absolute;
+      top: -10000px;
+      left: 0;
+      width: 800px;
+      background: white;
+      padding: 0;
+      margin: 0;
+      z-index: -100;
+      pointer-events: none;
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.41.0",
+    "jspdf": "https://esm.sh/jspdf@^2.5.1",
+    "html2canvas": "https://esm.sh/html2canvas@^1.4.1"
+  }
+}
+</script>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100">
+  <div id="root"></div>
+  <!-- Permanent hidden zone for PDF generation -->
+  <div id="pdf-capture-zone"></div>
+</body>
+</html>
